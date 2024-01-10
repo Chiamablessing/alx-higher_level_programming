@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-import fast_alphabet_103
+from string import ascii_uppercase; import os;
+os.write(1, bytes(ascii_uppercase + '\n', 'utf-8'))
