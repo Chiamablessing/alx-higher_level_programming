@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 def safe_print_division(a, b):
-    flag = 0
-    div = 0
+    """a function that divides 2 integers and prints the result.
+
+    Args:
+        a (int): numerator
+        b (int): denominator
+    """
     try:
-        div = a / b
-    except:
-        flag = 1
+        div = a/b
+    except (ValueError, TypeError, ZeroDivisionError):
+        div = None
     finally:
-        if flag == 0:
-            print("Inside result: {}".format(div))
-            return (div)
-        else:
-            print("Inside result: None")
-            return (None)
+        print("Inside result: {}".format(div))
+    return div
