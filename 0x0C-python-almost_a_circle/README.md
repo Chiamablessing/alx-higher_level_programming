@@ -1,3 +1,5 @@
+# 0x0C. Python - Almost a circle
+
 In this project, I encapsulated skills in Python object-oriented programming by coding three connected classes to represent rectangles and squares. I wrote my own test suite using the unittest module to test all functionality for each class.
 
 The three classes involved utilizing the following Python tools:
@@ -17,3 +19,9 @@ tests/test_models: Folder containing the following independently-developed test 
 test_base.py
 test_rectangle.py
 test_square
+
+## Class and Module Fixtures¶
+
+Class and module level fixtures are implemented in TestSuite. When the test suite encounters a test from a new class then tearDownClass() from the previous class (if there is one) is called, followed by setUpClass() from the new class.
+
+Similarly if a test is from a different module from the previous test then tearDownModule from the previous module is run, followed by setUpModule from the new module.
