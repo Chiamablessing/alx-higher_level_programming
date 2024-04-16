@@ -2,8 +2,8 @@
 """ prints the State object with the name passed as argument from the database
 """
 import sys
-from model_state import Base, State
 from sqlalchemy import (create_engine)
+from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 
 
@@ -13,7 +13,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    instance = session.query(State).filter(State.name == (sys.argv[4],))
+    instance = session.query(State).filter(State.name == (sys.argv[4],)).first()
     try:
         print(instance[0].id)
     except IndexError:
